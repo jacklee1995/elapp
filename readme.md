@@ -29,11 +29,11 @@ git clone https://github.com/jacklee1995/electron-vite-ts-app.git
 # Install Dependencies
 
 ```
-npm run install
+npm run inst
 
 # or
 
-yarn install
+yarn inst
 ```
 
 # Run
