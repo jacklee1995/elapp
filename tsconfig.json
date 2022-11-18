@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ],
+      "@/*": [
+        "./vue/*"
+      ],
+      "#/*": [
+        "./electron/*"
+      ]
+    }
+  },
+  "include": [
+    "electron/**/*",
+  ]
+}
