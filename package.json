@@ -11,13 +11,15 @@
   "repository": "https://github.com/jacklee1995/electron-vite-ts-app",
   "description": "A Electron-Vite-Vue  application written with Typescript.",
   "scripts": {
-    "install": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\" && npm install",
-    "vite:serve": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\" && vite --host",
-    "vite:build": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\" && vite build",
-    "electron": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\" && tsc && electron ./dist/main.js",
-    "electron:serve": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\" && concurrently -k \"npm run vite:serve\" \"npm run electron\"",
-    "serve": "nodemon -e ts --watch electron --exec \"npm run electron\"",
-    "build": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production')\" && vite build && electron-builder"
+    "set:development":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\"",
+    "set:production":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production')\"",
+    "inst": "npm run set:development && npm install",
+    "vite:serve": "npm run set:development && vite --host",
+    "vite:build": "npm run set:development && vite build",
+    "electron": "npm run set:development && tsc && electron ./dist/main.js",
+    "electron:serve": "npm run set:development && concurrently -k \"npm run vite:serve\" \"npm run electron\"",
+    "serve": "nodemon -e ts --watch electron --exec \"npm run electron:serve\"",
+    "build": "npm run set:production && vite build && electron-builder"
   },
   "dependencies": {
     "vue": "^3.2.41",
@@ -89,5 +91,6 @@
       "buildResources": "assets",
       "output": "release"
     }
-  }
+  },
+  "__npminstall_done": false
 }
