@@ -16,22 +16,18 @@ function createWindow() {
     width: 800,
   });
 
-  // and load the index.html of the app.
-  // mainWindow.loadFile(path.join(__dirname, "../vue/dist/index.html"));
-  // mainWindow.loadURL('http://localhost:5173/')
 
-  logger.fatal("process.env.NODE_ENV =", process.env.NODE_ENV)
-
-  logger.warn(`file://${VUE_DIST_HTML}`)
+  logger.debug("process.env.NODE_ENV =", process.env.NODE_ENV);
+  logger.debug(`file://${VUE_DIST_HTML}`);
 
   mainWindow.loadURL(
-    process.env.NODE_ENV === 'development'
+    process.env.NODE_ENV !== 'production'
       ? `http://localhost:5173/`
       : `file://${VUE_DIST_HTML}`
   );
 
   // Open the DevTools.
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV !== "production") {
     mainWindow.webContents.openDevTools()
   }
   return mainWindow
