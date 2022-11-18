@@ -4,7 +4,7 @@
 
 **Author Email**: [291148484@163.com](mailto:291148484@163.com)
 
-LICENSE: MIT
+**LICENSE**: MIT
 
 **GitHub**: https://github.com/jacklee1995/electron-vite-ts-app
 
