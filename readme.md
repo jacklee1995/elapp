@@ -23,7 +23,7 @@ Next, I plan to introduce React as a scheme to build the front page of the rende
 **Note**: You need to download and install a git tool from [https://git-scm.com/](https://git-scm.com/) first
 
 ```
-git clone 
+git clone https://github.com/jacklee1995/electron-vite-ts-app.git
 ```
 
 # Install Dependencies
