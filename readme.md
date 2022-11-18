@@ -18,6 +18,14 @@ This is an Electron desktop template project written by TypeScript and built by 
 
 Next, I plan to introduce React as a scheme to build the front page of the rendering process in the same way. Next, all of these will be able to generate different template projects through a new project-this project is a scaffolding tool through question and answer.
 
+# Install this template as init electron project
+
+**Note**: You need to download and install a git tool from [https://git-scm.com/](https://git-scm.com/) first
+
+```
+git clone 
+```
+
 # Install Dependencies
 
 ```
