@@ -1,12 +1,12 @@
 # electron-vite-ts-app
 
-Author: Jack Lee (李俊才)
+**Author**: Jack Lee (李俊才)
 
-Author Email: 291148484@163.com
+**Author Email**: [291148484@163.com](mailto:291148484@163.com)
 
 LICENSE: MIT
 
-GitHub: https://github.com/jacklee1995/electron-vite-ts-app
+**GitHub**: https://github.com/jacklee1995/electron-vite-ts-app
 
 # What's this
 
@@ -71,4 +71,10 @@ npm run build
 
 # Informations
 
- Npm has a default configuration item-` production`, and when it is set to true, the dependency packages under devDependencies will not be installed. This means that when the environment variable ` NODE_ENV is set in your system and its value is ` production, if you directly use the command ` npm install, some dependencies used in the development environment cannot be installed.
+## Before use
+
+If you have powershell v7.x.x installed, you can ignore this subsection. Otherwise, you need to replace all `pwsh` in the script field with `powershell` in `package.json` file.
+
+## NODE_ENV
+
+ Npm has a default configuration item - `production`, and when it is set to true, the dependency packages under devDependencies will not be installed. This means that when the environment variable `NODE_ENV` is set in your system and its value is `production`, if you directly use the command `npm install`, some dependencies used in the development environment may not be installed.
