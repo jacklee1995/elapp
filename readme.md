@@ -10,7 +10,7 @@
 
 # What's this
 
-# Brief Introduction
+## Brief Introduction
 
 This is an Electron desktop template project written by TypeScript and built by Vite, in which Vue3 is used as the front-end writing framework of the rendering process.
 
