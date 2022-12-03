@@ -1,28 +1,29 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
-import * as log4js from "log4js";
-import { VUE_DIST_HTML } from './params'
-
-const logger = log4js.getLogger();
-logger.level = "debug";
+import { logger, VUE_DIST_HTML, SERVER_PORT } from './params';
 
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     height: 600,
+    width: 800,
     webPreferences: {
+      devTools: true,
+      nodeIntegration: true,
+      nodeIntegrationInWorker: false,
+      contextIsolation: true,
       preload: path.join(__dirname, "preload.js"),
     },
-    width: 800,
+    
   });
-
 
   logger.debug("process.env.NODE_ENV =", process.env.NODE_ENV);
   logger.debug(`file://${VUE_DIST_HTML}`);
+  // mainWindow.loadURL(' http://localhost:5175/')
 
   mainWindow.loadURL(
     process.env.NODE_ENV !== 'production'
-      ? `http://localhost:5173/`
+      ? `http://localhost:${SERVER_PORT}/`
       : `file://${VUE_DIST_HTML}`
   );
 

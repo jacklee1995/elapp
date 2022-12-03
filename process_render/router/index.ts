@@ -1,3 +1,4 @@
+import type { App } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -18,6 +19,13 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
-})
+});
 
-export default router
+function setupRouter(app: App<Element>) {
+  app.use(router);
+}
+
+export {
+  router,
+  setupRouter
+}

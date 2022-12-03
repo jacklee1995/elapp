@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "module": "commonjs",
     "noImplicitAny": false,
     "sourceMap": false,
+    "resolveJsonModule": true,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
@@ -10,14 +12,14 @@
         "node_modules/*"
       ],
       "@/*": [
-        "./vue/*"
+        "process_render/*"
       ],
       "#/*": [
-        "./electron/*"
+        "process_main/*"
       ]
     }
   },
   "include": [
-    "electron/**/*",
+    "process_main/**/*",
   ]
 }
