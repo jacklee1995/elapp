@@ -8,7 +8,7 @@
 
 **GitHub**: https://github.com/jacklee1995/electron-vite-ts-app
 
-# What's this
+# What's that
 
 ## Brief Introduction
 
