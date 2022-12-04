@@ -25,8 +25,8 @@
   "description": "A Electron-Vite-Vue application written with Typescript.",
   "scripts": {
     "get:environment":"pwsh -Command \"[System.Environment]::GetEnvironmentVariable('NODE_ENV')\"",
-    "set:development":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development')\"",
-    "set:production":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production')\"",
+    "set:development":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development','User')\"",
+    "set:production":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production','User')\"",
     "inst": "npm run set:development && npm install",
     "vite:serve": "npm run set:development && vite --host",
     "vite:build": "npm run set:development && vite build",
