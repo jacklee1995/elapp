@@ -14,7 +14,7 @@
 
 This is an Electron desktop template project written by TypeScript and built by Vite, in which Vue3 is used as the front-end writing framework of the rendering process.
 
-## What to do 
+## What to do
 
 Next, I plan to introduce React as a scheme to build the front page of the rendering process in the same way. Next, all of these will be able to generate different template projects through a new project-this project is a scaffolding tool through question and answer.
 
@@ -25,10 +25,13 @@ Next, I plan to introduce React as a scheme to build the front page of the rende
 **Note**: You need to download and install a git tool from [https://git-scm.com/](https://git-scm.com/) first
 
 use git hub
+
 ```
 git clone https://github.com/jacklee1995/electron-vite-ts-app.git
 ```
+
 or use gitee
+
 ```
 git clone https://gitee.com/jacklee1995/electron-vite-ts-app.git
 ```
@@ -36,44 +39,35 @@ git clone https://gitee.com/jacklee1995/electron-vite-ts-app.git
 ## Install Dependencies
 
 ```
-npm run inst
-
-# or
-
-yarn inst
+pnpm inst
 ```
 
 # Run App
-## run vite app 
-```
-npm run vite:serve
-```
 
-## Run electron app
-
-### Run without sqy sourcefile change
+## run render process dev serve only
 
 ```
-npm run electron
+pnpm run start
 ```
 
-### Run with sqy sourcefile change
+## Run app
 
 ```
-npm run serve
+pnpm run serve
 ```
 
 # Build
 
-## build vite app
+## build vite only
 
 ```
-npm run vite:build
+pnpm run build:renders
 ```
 
 ## build installer
+
 ```
-npm run build
+pnpm run build
 ```
 
 # Informations
@@ -84,4 +78,4 @@ If you have powershell v7.x.x installed, you can ignore this subsection. Otherwi
 
 ## NODE_ENV
 
- Npm has a default configuration item - `production`, and when it is set to true, the dependency packages under devDependencies will not be installed. This means that when the environment variable `NODE_ENV` is set in your system and its value is `production`, if you directly use the command `npm install`, some dependencies used in the development environment may not be installed.
+Npm has a default configuration item - `production`, and when it is set to true, the dependency packages under devDependencies will not be installed. This means that when the environment variable `NODE_ENV` is set in your system and its value is `production`, if you directly use the command `npm install`, some dependencies used in the development environment may not be installed.
