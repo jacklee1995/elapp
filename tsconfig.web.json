@@ -1,0 +1,27 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true,
+        "jsx": "preserve",
+        "lib": ["ES2018", "DOM", "DOM.Iterable"],
+        "types": ["unplugin-vue-macros/macros-global"],
+        "skipLibCheck": true
+    },
+    "include": [
+        "process_render/**/src/**/*.ts",
+        "process_render/**/src/**/*.d.ts",
+        "process_render/**/src/**/*.vue",
+        "process_render/**/src/**/*.tsx",
+        "process_render/**/typings/components.d.ts",
+        "process_render/**/typings/env.d.ts",
+    ],
+    "exclude": [
+        "node_modules",
+        "**/dist",
+        "**/__tests__/**/*",
+        "**/gulpfile.ts",
+        "**/test-helper",
+        "packages/test-utils",
+        "**/*.md"
+    ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@elapp/process_main",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "author": {
+    "name": "jcLee1995",
+    "email": "291148484@163.com",
+    "url": "https://github.com/jacklee1995"
+  },
+  "dependencies": {
+    "@electron/asar": "^3.2.2",
+    "@electron/osx-sign": "^1.0.1",
+    "@electron/remote": "^2.0.8",
+    "electron-is": "^3.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^5.3.0",
+    "date-format": "^4.0.14",
+    "debug": "^4.3.4",
+    "flatted": "^3.2.7",
+    "fs-extra": "^11.1.0",
+    "graceful-fs": "^4.2.10",
+    "get-port": "^6.1.2",
+    "jsonfile": "^6.1.0",
+    "log4js": "^6.7.1",
+    "ms": "^2.1.3",
+    "node-gyp": "^9.3.0",
+    "rfdc": "^1.3.0",
+    "streamroller": "^3.1.3",
+    "universalify": "^2.0.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.10",
+    "@npmcli/fs": "^3.1.0",
+    "@types/node": "^18.11.10",
+    "cross-env": "^7.0.3",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.56.1",
+    "typescript": "^4.9.3",
+    "wait-on": "^6.0.1"
+  },
+  "scripts": {
+    "build:tsc": "tsc",
+    "build": "pnpm run build:tsc"
+  }
+}

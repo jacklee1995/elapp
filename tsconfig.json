@@ -1,25 +1,15 @@
 {
+  "references": [
+    { "path": "./tsconfig.web.json" },
+    { "path": "./tsconfig.index.json" },
+    { "path": "./tsconfig.loading.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "files": [],
   "compilerOptions": {
-    "allowJs": true,
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "sourceMap": false,
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "node_modules/*"
-      ],
-      "@/*": [
-        "process_render/*"
-      ],
-      "#/*": [
-        "process_main/*"
-      ]
-    }
+    "composite": true,
+    "types": [],
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "include": [
-    "process_main/**/*",
-  ]
 }

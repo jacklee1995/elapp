@@ -1,125 +1,67 @@
 {
-  "name": "electron-vite-ts-app",
-  "devlepment": {
-    "serve": {
-      "port": 5173
-    },
-    "logger": {
-      "level": "debug"
-    }
-  },
-  "production": {
-    "serve": {
-      "port": 5196
-    }
-  },
-  "version": "0.0.2",
-  "main": "./dist/process_main/main.js",
+  "private": true,
+  "name": "jc-notebook",
+  "packageManager": "pnpm@7.18.0",
+  "version": "pre0.0.1",
+  "description": "A electron-vite notebook application.",
+  "keywords": [
+    "notebook",
+    "electron",
+    "typescript",
+    "vue3"
+  ],
   "author": {
     "name": "jcLee1995",
     "email": "291148484@163.com",
     "url": "https://github.com/jacklee1995"
   },
-  "license": "MIT",
-  "repository": "https://github.com/jacklee1995/electron-vite-ts-app",
-  "description": "A Electron-Vite-Vue application written with Typescript.",
+  "workspaces": [
+    "process_render/*",
+    "process_main"
+  ],
   "scripts": {
-    "get:environment":"pwsh -Command \"[System.Environment]::GetEnvironmentVariable('NODE_ENV')\"",
-    "set:development":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development','User')\"",
-    "set:production":"pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production','User')\"",
-    "inst": "npm run set:development && npm install",
-    "vite:serve": "npm run set:development && vite --host",
-    "vite:build": "npm run set:development && vite build",
-    "electron": "npm run set:development && tsc && electron ./dist/process_main/main.js",
-    "electron:serve": "npm run set:development && concurrently -k \"npm run vite:serve\" \"npm run electron\"",
-    "serve": "nodemon -e ts --watch electron --exec \"npm run electron:serve\"",
-    "build": "tsc && npm run set:production && vite build && electron-builder"
+    "get:env": "pwsh -Command \"[System.Environment]::GetEnvironmentVariable('NODE_ENV')\"",
+    "set:development": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','development','User')\"",
+    "set:production": "pwsh -Command \"[System.Environment]::SetEnvironmentVariable('NODE_ENV','production','User')\"",
+    "inst": "pnpm run set:development && pnpm install",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "clean": "rimraf dist &&  pnpm run rimraf node_modules && pnpm run -r --parallel clean",
+    
+    "build:renders": "pnpm run -C process_render/loading build && pnpm run -C process_render/index build",
+    "build:main":"pnpm run -C process_main build:tsc",
+    "build:app": "pnpm run -C build build",
+    "build": "pnpm run set:production && pnpm run build:renders && pnpm run build:main && pnpm run build:app",
+    
+    "start": "pnpm run build:main && concurrently -k \"pnpm run -C process_render/loading serve\" \"pnpm run -C process_render/index serve\" \"pnpm run -C build serve\"",
+    "serve": "pnpm run set:development && nodemon -e ts --watch process_main --exec \"pnpm run start\""
   },
   "dependencies": {
-    "vue": "^3.2.45",
-    "@electron/asar": "^3.2.2",
-    "@electron/osx-sign": "^1.0.1",
-    "@electron/remote": "^2.0.8",
-    "@vueuse/core": "^9.6.0",
+    "@elapp/process_main": "workspace:*",
+    "@elapp/index": "workspace:*",
+    "@elapp/loading": "workspace:*",
+    "@elapp/build": "workspace:*",
+    "@vue/tsconfig": "^0.1.3",
+    "core-js": "^3.26.1",
     "log4js": "^6.7.1",
-    "node-gyp": "^9.3.0",
-    "pinia": "^2.0.27",
-    "vue-router": "^4.1.6"
+    "node-gyp": "^9.3.0"
   },
   "devDependencies": {
     "@npmcli/fs": "^3.1.0",
+    "@pnpm/find-workspace-packages": "^4.0.16",
+    "@pnpm/logger": "^4.0.0",
+    "@pnpm/types": "^8.4.0",
     "@types/node": "^18.11.10",
-    "@vitejs/plugin-vue": "^3.2.0",
-    "@vitejs/plugin-vue-jsx": "^2.1.1",
-    "@vue/tsconfig": "^0.1.3",
-    "concurrently": "^7.6.0",
+    "@yarnpkg/core": "4.0.0-rc.32",
     "cross-env": "^7.0.3",
-    "electron": "^22.0.0",
-    "electron-builder": "^23.6.0",
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.56.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.9.3",
-    "vite": "^3.2.4",
-    "vue-tsc": "^1.0.10",
     "wait-on": "^6.0.1"
   },
-  "private": true,
-  "build": {
-    "appId": "tech.thispage.elects-vite",
-    "productName": "elects-vite",
-    "copyright": "Copyright © 2022 jcLee1995",
-    "win": {
-      "icon": "./public/favicon_256x256.ico",
-      "asar": true,
-      "requestedExecutionLevel": "requireAdministrator",
-      "compression": "store",
-      "executableName": "demo",
-      "extraFiles": "",
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        }
-      ]
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
-    "files": [
-      "dist/*",
-      "dist/process_main/**/*",
-      "process_render/dist/**/*",
-      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
-      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
-      "!**/node_modules/*.d.ts",
-      "!**/node_modules/.bin",
-      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
-      "!.editorconfig",
-      "!**/._*",
-      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
-      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
-      "!**/{appveyor.yml,.travis.yml,circle.yml}",
-      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
-    ],
-    "asar": true,
-    "icon": "./public/jcstudio_256x256.ico",
-    "extraFiles": [
-      {
-        "from": "resources",
-        "to": "resources"
-      },
-      {
-        "from": "about",
-        "to": "about"
-      }
-    ],
-    "directories": {
-      "buildResources": "assets",
-      "output": "release"
-    }
+  "engines": {
+    "node": ">= 16"
   }
 }

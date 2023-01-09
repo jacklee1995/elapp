@@ -1,29 +1,16 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-.DS_Store
-dist/*
-release/*
-dist-ssr
-coverage
-*.local
-process_render/dist/*
-/cypress/videos/
-/cypress/screenshots/
-
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+node_modules
+
+# main process
+process_main/node_modules
+
+# render process
+process_render/**/node_modules
+
+# build
+build/.vs
+build/node_modules
+build/release
+build/src
+build/renders

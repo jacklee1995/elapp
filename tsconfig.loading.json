@@ -1,0 +1,27 @@
+{
+    "extends": "./tsconfig.web.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": ["ESNext", "DOM"],
+        "skipLibCheck": true,
+        "noImplicitAny": false,
+        "noEmit": true,
+        "baseUrl": "./process_render/loading",
+    },
+    "include": [
+      "process_render/loading/src/**/*.ts",
+      "process_render/loading/src/**/*.d.ts",
+      "process_render/loading/src/**/*.tsx",
+      "process_render/loading/src/**/*.vue",
+      "process_render/loading/src/types/**/*.d.ts",
+    ]
+  }
+  
