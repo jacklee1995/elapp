@@ -60,7 +60,8 @@ if (!gotTheLock) {
     .then(
       async () => {
         require("@electron/remote/main").initialize();
-        const WinLoading = newWinLoading();
+        const id = newWinLoading();
+        const WinLoading = getWindowById(id);
         setTimeout(() => {
           (WinLoading as any).close();
           newWinMain().toString();

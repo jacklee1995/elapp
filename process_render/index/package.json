@@ -14,17 +14,13 @@
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
     "dotenv": "^16.0.3",
-    "highlight.js": "^11.7.0",
-    "katex": "^0.16.4",
-    "marked": "^4.2.3",
-    "marked-katex-extension": "^1.0.1",
-    "monaco-editor": "^0.34.1",
     "pinia": "^2.0.27",
     "postcss": "^8.4.20",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "rollup-plugin-vue": "^6.0.0",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "jc-icons-vue": "0.0.1"
   },
   "devDependencies": {
     "@electron/remote": "^2.0.8",

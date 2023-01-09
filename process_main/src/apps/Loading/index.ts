@@ -5,7 +5,6 @@ import { setWindowById } from "../../window/manager";
 
 function newWinLoading() {
   const window = new BrowserWindow(winparams as any);
-  logger.info("create Loading window...");
   const id = setWindowById(window);
 
   // loadingWindow.loadFile(`${RENDER_HTML_PATH.loading}`)
@@ -18,7 +17,7 @@ function newWinLoading() {
   } else {
     window.loadFile(`${RENDER_HTML_PATH.index}`);
   }
-  return window;
+  return id;
 }
 
 export { newWinLoading };

@@ -17,7 +17,8 @@
   },
   "workspaces": [
     "process_render/*",
-    "process_main"
+    "process_main",
+    "build"
   ],
   "scripts": {
     "get:env": "pwsh -Command \"[System.Environment]::GetEnvironmentVariable('NODE_ENV')\"",

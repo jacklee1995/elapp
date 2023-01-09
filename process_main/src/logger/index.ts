@@ -13,7 +13,7 @@ function setRuntimeLogger(level="debug"): log4js.Logger{
       datafileout: {
         type: "dateFile",
         filename: APP_DATAFILE_LOG_PATH,
-        pattern: ".yyyy-MM-dd-hh-mm-ss-SSS",
+        pattern: "YYYY-MM-DD HH:mm:ss",
         maxLoSize: 1024 * 1024 *100,
         backups: 6
       },

@@ -5,46 +5,29 @@ import { setRuntimeLogger } from "./logger";
 
 
 
-// 应用名
+// Application Name
 const APP_NAME = "elApp";
 
-// Base 目录为项目根
-const BASE_DIR = path.resolve(path.resolve(__dirname, "../"), "../");
-// let BASE_DIR;
-// if(process.env.NODE_ENV === "development"){
-//   BASE_DIR = path.resolve(path.resolve(__dirname, "../"), "../");
-// }else{
-//   BASE_DIR = path.join('app.asar',path.resolve(path.resolve(__dirname, "../"), "../"));
-// }
+let APP_BASE;
 
-
-/* ****************************** 主进程目录 ****************************** */
-
-// let MAIN_PROCESS_DIR: string;
-// if(process.env.NODE_ENV === "production"){
-//   MAIN_PROCESS_DIR = path.join(BASE_DIR, "app.asar");
-// }else{
-//   MAIN_PROCESS_DIR = path.join(BASE_DIR, "process_main");
-// }
-
-// const BUILD_DIR = path.join(BASE_DIR, "build");
-
-
-// build file path
-let BUILD_DIR: string;
 // APP Icon Path
 let APP_ICON_PATH: string;
 if(process.env.NODE_ENV === "development"){
-  BUILD_DIR = path.join(BASE_DIR, "build");
-  APP_ICON_PATH = path.join(path.join(BASE_DIR, "assets"),"jcstudio_256x256.ico");
+  APP_BASE = path.resolve(path.resolve(__dirname, "../"), "../");
 }
 else{
-  BUILD_DIR = ''
-  APP_ICON_PATH = path.join(path.join(path.join(BASE_DIR,'app.asar'), "assets"),"jcstudio_256x256.ico");
+  APP_BASE = app.getAppPath()
 }
 
+let BUILD_DIR = path.join(APP_BASE, "build");
+
+APP_ICON_PATH = process.env.NODE_ENV === "development"
+    ? path.join(path.join(BUILD_DIR, "assets"),"jcstudio_256x256.ico")
+    : path.join(path.join(APP_BASE, "assets"),"jcstudio_256x256.ico")
+
+
 // VITE ENV 将用于获取开发模式下调试时的端口
-const VITE_ENVS_DIR = path.join(BASE_DIR, "VITE_ENVS");
+const VITE_ENVS_DIR = path.join(APP_BASE, "VITE_ENVS");
 
 // LOGS
 const LOG_DIR = app.getPath("logs");
@@ -67,12 +50,6 @@ const logger = setRuntimeLogger("info");
 // Database - SQLite File
 const DB_ABSOLUTE_PATH = path.join(APP_DATAS_BASE_DIR, "rundata.sqlite3");
 
-
-
-
-logger.warn(`BASE_DIR = ${BASE_DIR}`)
-logger.warn(`APP_ICON_PATH = ${APP_ICON_PATH}`)
-
 const DEFAULT_DATA_HOME = path.join(APP_DATAS_BASE_DIR, "notes");
 
 const WINDOW_PORT = {
@@ -80,12 +57,11 @@ const WINDOW_PORT = {
   loading: 5174,
 };
 
-// const RENDER_PROCESS_DIR = path.join(BASE_DIR, "process_render");
-const RENDER_DISTA_DIR = path.join(BUILD_DIR, "renders");
+const RENDER_BUILDS_DIR = path.join(APP_BASE, "renders");
 
 const RENDER_APP_PATH = {
-  loading: path.join(RENDER_DISTA_DIR, "loading"),
-  index: path.join(RENDER_DISTA_DIR, "index"),
+  loading: path.join(RENDER_BUILDS_DIR, "loading"),
+  index: path.join(RENDER_BUILDS_DIR, "index"),
 };
 
 const RENDER_HTML_PATH = {
@@ -93,9 +69,15 @@ const RENDER_HTML_PATH = {
   index: path.join(RENDER_APP_PATH.index, "index.html"),
 };
 
+logger.info("-----------------------------");
+logger.warn(`APP_PATH = ${APP_BASE}`)
+logger.warn(`BUILD_DIR = ${BUILD_DIR}`)
+logger.warn(`APP_ICON_PATH = ${APP_ICON_PATH}`)
+logger.info("-----------------------------");
+
 export {
   APP_NAME,
-  BASE_DIR,
+  // BASE_DIR,
   VITE_ENVS_DIR,
   LOG_DIR,
   APP_DATAFILE_LOG_PATH,
