@@ -2,17 +2,17 @@
 
 [中文](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "中文文档") | [English](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "英文文档")
 
-**Author**: Jack Lee (李俊才)
+**作者**: Jack Lee (李俊才)
 
-**Author Email**: [291148484@163.com](mailto:291148484@163.com)
+**作者邮箱**: [291148484@163.com](mailto:291148484@163.com)
 
-**LICENSE**: [MIT](https://github.com/jacklee1995/electron-vite-ts-app/blob/master/LICENSE)
+**开源协议类型**: [MIT](https://github.com/jacklee1995/electron-vite-ts-app/blob/master/LICENSE)
 
-**GitHub**: https://github.com/jacklee1995/electron-vite-ts-app
+**GitHub**:  [https://github.com/jacklee1995/elapp]()
 
-# brief introduction
+# 简介
 
-Elapp is an Electron desktop application framework developed by TypeScript language using Vite as a development and construction tool. The framework consists of project template, scaffolding and component library. Template is a basic elapp application, which is created and customized by @elapp/cli process.
+elapp 是一个使用 Vite  作为开发和构建工具的，通过 TypeScript 语言进行开发的 Electron 桌面应用框架。框架由 项目模板、脚手架、组件库构成。模板是一个基础的 elapp 应用，它由 @elapp/cli 进程创建、定制。
 
 # 项目结构
 
@@ -63,23 +63,27 @@ Elapp is an Electron desktop application framework developed by TypeScript langu
          └─[window]
 ```
 
-# Download
 
-## Install from github
+# 本地化
+
+## 从 github 安装
 
 ```
 git clone https://github.com/jacklee1995/elapp.git
 ```
 
-## Install from gitee
+## 从 gitee 安装
 
 ```
 https://toscode.gitee.com/jacklee1995/electron-vite-ts-app.git
 ```
 
-## Install project dependencies
 
-### Install powershell 7.x (recommended, not required)
+# 安装项目依赖
+
+## 前提
+
+### 安装 powershell 7.x （推荐、非必须）
 
 PowerShell-7.3.0 地址：
 
@@ -87,72 +91,10 @@ PowerShell-7.3.0 地址：
 https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/PowerShell-7.3.0-win-x64.msi
 ```
 
-WIndows system, if not installed in, you need to manually replace the pwsh string in the command value as powershell.
+WIndows中若不安装则需要手动替换 `pwsh` 为 `powershell` 。在 Linux 中
 
-## Install dependencies
+## 安装依赖
 
 ```
 pnpm install
 ```
-
-# Get and install this template as init electron project
-
-## Download from github or gitee
-
-**Note**: You need to download and install a git tool from [https://git-scm.com/](https://git-scm.com/) first
-
-use git hub
-
-```
-git clone https://github.com/jacklee1995/electron-vite-ts-app.git
-```
-
-or use gitee
-
-```
-git clone https://gitee.com/jacklee1995/electron-vite-ts-app.git
-```
-
-## Install Dependencies
-
-```
-pnpm inst
-```
-
-# Run App
-
-## run render process dev serve only
-
-```
-pnpm run start
-```
-
-## Run app
-
-```
-pnpm run serve
-```
-
-# Build
-
-## build vite only
-
-```
-pnpm run build:renders
-```
-
-## build installer
-
-```
-pnpm run build
-```
-
-# Informations
-
-## Before use
-
-If you have powershell v7.x.x installed, you can ignore this subsection. Otherwise, you need to replace all `pwsh` in the script field with `powershell` in `package.json` file.
-
-## NODE_ENV
-
-Npm has a default configuration item - `production`, and when it is set to true, the dependency packages under devDependencies will not be installed. This means that when the environment variable `NODE_ENV` is set in your system and its value is `production`, if you directly use the command `npm install`, some dependencies used in the development environment may not be installed.
