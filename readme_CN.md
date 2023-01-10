@@ -1,6 +1,6 @@
 # elapp
 
-[中文](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "中文文档") | [English](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "英文文档")
+中文 | [English](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "英文文档")
 
 **作者**: Jack Lee (李俊才)
 
@@ -63,7 +63,6 @@ elapp 是一个使用 Vite  作为开发和构建工具的，通过 TypeScript �
          └─[window]
 ```
 
-
 # 本地化
 
 ## 从 github 安装
@@ -77,7 +76,6 @@ git clone https://github.com/jacklee1995/elapp.git
 ```
 https://toscode.gitee.com/jacklee1995/electron-vite-ts-app.git
 ```
-
 
 # 安装项目依赖
 

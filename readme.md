@@ -1,6 +1,6 @@
 # elapp
 
-[中文](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "中文文档") | [English](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "英文文档")
+[中文](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "中文文档") | English
 
 **Author**: Jack Lee (李俊才)
 
@@ -14,44 +14,44 @@
 
 Elapp is an Electron desktop application framework developed by TypeScript language using Vite as a development and construction tool. The framework consists of project template, scaffolding and component library. Template is a basic elapp application, which is created and customized by @elapp/cli process.
 
-# 项目结构
+# Project structure
 
 ```tree
 [elapp]
-   ├─[process_main]                 # 主进程源代码
+   ├─[process_main]                 # Main process source code
    │   ├─[src]
-   │   │   ├─[apps]                 # 主进程应用集，管理对应的各个应用窗口
+   │   │   ├─[apps]                 # The main process application set manages the corresponding application windows.
    │   │   │   ├─[App1]
    │   │   │   ├─[App2]
    │   │   │   └─...
-   │   │   ├─[associations]         # 注册系统关联
-   │   │   ├─[check]                # 应用初始化检查
-   │   │   ├─[develop_tools]        # 开发化境用到的一些工具
-   │   │   ├─[logger]               # 日志器
-   │   │   ├─[sys]                  # 管理系统资源
-   │   │   └─[window]               # 窗口管理相关
+   │   │   ├─[associations]         # Register system association
+   │   │   ├─[check]                # Application initialization check
+   │   │   ├─[develop_tools]        # Some tools used to develop the environment
+   │   │   ├─[logger]               # logger
+   │   │   ├─[sys]                  # Manage system resources
+   │   │   └─[window]               # Window management related
    │   └─[types]
-   ├─[process_render]               # 渲染进程子项目集
+   ├─[process_render]               # A set of subprojects for the rendering process.
    │   ├─[render_app_1]
    │   ├─[render_app_2]
-   │   └─[nodetools]                # 一些 NodeJS 代码，主要用于渲染进程的构建工具，如 Vite
-   ├─[public]                       # 渲染进程的静态公共资源文件
-   ├─[VITE_ENVS]                    # Vite 所需的环境变量
-   └─[build]                        # 构建项目
-      ├─[assets]                    # 用于存放编译需要用到的资源，如图标
-      ├─[release]                   # 用于存放各个发布版本编译后的文件
+   │   └─[nodetools]                # Some NodeJS code, mainly used for building tools of rendering process, such as Vite.
+   ├─[public]                       # The static public resource file of the rendering process
+   ├─[VITE_ENVS]                    # Environment variables required by Vite
+   └─[build]                        # Build project
+      ├─[assets]                    # Used to store resources needed for compilation, such as icons.
+      ├─[release]                   # Used to store the compiled files of each release version.
       │   ├─[v0.0.1]
       │   ├─[v0.0.2]
       │   └─...
-      ├─[renders]                   # 构建后所有渲染进程子应用
+      ├─[renders]                   # Build all rendering process sub-applications
       │   ├─[App1]
       │   ├─[App2]
       │   └─...
-      ├─[sources]                  # 直接打包到安装包中的文件，将随着应用的安装写入应用的目录中
+      ├─[sources]                  # The files directly packaged into the installation package will be written into the directory of the application with the installation of the application.
       │   ├─[chrome_extension]
       │   ├─[dll]
       │   └─[script]
-      └─[src]                      # 编译的适用于 electron 的主进程 javascript 代码
+      └─[src]                      # Compiled javascript code for main process of electron
          ├─[apps]
          │   ├─[Index]
          │   └─[Loading]
