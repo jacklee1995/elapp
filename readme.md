@@ -81,7 +81,7 @@ https://toscode.gitee.com/jacklee1995/electron-vite-ts-app.git
 
 ### Install powershell 7.x (recommended, not required)
 
-PowerShell-7.3.0 地址：
+PowerShell-7.3.0 Download link：
 
 ```
 https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/PowerShell-7.3.0-win-x64.msi
