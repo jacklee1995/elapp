@@ -1,6 +1,6 @@
 # elapp
 
-中文 | [English](https://github.com/jacklee1995/elapp/blob/elapp/readme.md "英文文档")
+中文 | [English](/readme.md "英文文档")
 
 **作者**: Jack Lee (李俊才)
 
