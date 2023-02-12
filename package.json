@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "jc-notebook",
+  "name": "jc-elapp",
   "packageManager": "pnpm@7.18.0",
   "version": "pre0.0.1",
-  "description": "A electron-vite notebook application.",
+  "description": "A electron-vite application.",
   "keywords": [
-    "notebook",
+    "elapp",
     "electron",
     "typescript",
     "vue3"
